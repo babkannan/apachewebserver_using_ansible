@@ -1,0 +1,13 @@
+---
+- hosts: webservers
+  tasks:
+    - name: Install apache web server
+      apt:
+       name: apache2
+       update_cache: yes
+       state: present
+
+    - name: Start apache web server
+      service:
+         name: apache2
+         state: restarted
